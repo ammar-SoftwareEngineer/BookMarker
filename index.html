@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/bookmark.png" type="image/x-icon">
+    <!-- files css -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <!-- title -->
+    <title>Book marker</title>
+</head>
+
+<body>
+
+    <!-- start header -->
+    <header class="text-center">
+        <div class="container">
+            <h1 class=" mt-5 position-relative d-inline-block z-2">Bookmarker</h1>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- start home -->
+    <section class="home mt-5">
+        <div class="container">
+            <div class="book-content">
+                <div class="head-book text-center py-4">
+                    <span>
+                        <i class="fa-solid fa-bookmark"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-solid fa-bookmark"></i>
+                    </span>
+                </div>
+                <div class="inputs-book mb-5">
+                    <div class="name-input d-grid mb-4">
+                        <label class="mb-2" for="siteName"><i class="fa-solid fa-book me-2"></i> Site Name</label>
+                        <input class="px-3 py-2 rounded-2" type="text" name="siteName" id="siteName"
+                            placeholder="Bookmarker Name">
+                    </div>
+                    <div class="url-input d-grid mb-4">
+                        <label class="mb-2" for="siteUrl"><i class="fa-solid fa-link me-2"></i> Site URL</label>
+                        <input class="px-3 py-2 rounded-2" type="url" name="siteUrl" id="siteUrl"
+                            placeholder="Website URL">
+                    </div>
+                    <div class="btn-submit text-center">
+                        <button onclick="addSite()" class="btn px-5">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end home -->
+    <!-- start table -->
+    <section class="data mt-4">
+        <div class="container">
+            <table class="table  bg-white text-center">
+                <thead class="border-bottom">
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Website Name</th>
+                        <th scope="col">Visit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- end table -->
+    <!-- start message -->
+    <div class="layer" id="layer">
+        <div class="card position-absolute top-50 start-50 translate-middle ">
+            <div class="card-body p-4">
+                <div class="head-card d-flex justify-content-between align-items-center" >
+                    <div class="circles d-flex gap-2">
+                        <span class="bg-danger rounded-circle d-block"></span>
+                        <span class="bg-warning rounded-circle d-block"></span>
+                        <span class="bg-success rounded-circle d-block"></span>
+                    </div>
+                    <button class="border-0 bg-transparent" onclick="closeMessage()"><i class="fa-solid fa-xmark fs-4"></i></button>
+                </div>
+                <h5 class="card-title mt-4">Site Name or Url is not valid, Please follow the rules below :</h5>
+                <p class="card-text mt-4"><i class="fa-regular fa-circle-right me-2"></i> Site name must contain at least 3 characters
+                </p>
+                <p class="card-text"><i class="fa-regular fa-circle-right me-2"></i> Site URL must be a valid one</p>
+            </div>
+        </div>
+    </div>
+   
+    <!-- end message -->
+    <!-- ################################################### -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
