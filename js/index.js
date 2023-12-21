@@ -46,7 +46,7 @@ function deleteSite(index) {
 }
 
 function validationUrl() {
-  var regex = /^(https:\/\/)/i;
+  var regex = /^(https:\/\/)?(http:\/\/)/i;
   return regex.test(siteUrl.value);
 }
 
