@@ -7,7 +7,7 @@ if (localStorage.getItem("sites") != null) {
   displaySite();
 }
 function addSite() {
-  if (validationName() === true && validationUrl() == true) {
+  if (validationName() == true && validationUrl() == true) {
     var site = {
       name: siteName.value,
       url: siteUrl.value,
@@ -20,7 +20,8 @@ function addSite() {
     if (!validationName()) {
       document.querySelector(".one").innerHTML =
         "Site name The letter you entered at the beginning of the word is lowercase";
-      document.querySelector(".card-text-two").style.display = "none";
+      document.querySelector(".two").innerHTML =
+        " Or Site name must contain at least 3 characters";
       document.getElementById("layer").style.cssText = "display: block; ";
     } else if (!validationUrl()) {
       document.querySelector(".two").innerHTML = "Site URL must be a valid one";
@@ -60,7 +61,7 @@ function validationUrl() {
 }
 
 function validationName() {
-  var regexName = /^[A-Z][\sa-zA-Z]{0,}$/g;
+  var regexName = /^[A-Z][\sa-zA-Z]{2,}$/g;
   return regexName.test(siteName.value);
 }
 

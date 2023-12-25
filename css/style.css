@@ -95,6 +95,7 @@ table {
 }
 .card .card-title {
   font-family: var(--fourth-font-family);
+  font-size: 25px;
 }
 .card .card-text-one,.card-text-two {
   font-family: var(--third-font-family);
