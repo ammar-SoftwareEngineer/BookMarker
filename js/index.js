@@ -17,7 +17,16 @@ function addSite() {
     displaySite();
     clearForm();
   } else {
-    document.getElementById('layer').style.cssText="display: block; "
+    if (!validationName()) {
+      document.querySelector(".one").innerHTML =
+        "Site name The letter you entered at the beginning of the word is lowercase";
+      document.querySelector(".card-text-two").style.display = "none";
+      document.getElementById("layer").style.cssText = "display: block; ";
+    } else if (!validationUrl()) {
+      document.querySelector(".two").innerHTML = "Site URL must be a valid one";
+      document.querySelector(".card-text-one").style.display = "none";
+      document.getElementById("layer").style.cssText = "display: block; ";
+    }
   }
 }
 function displaySite() {
@@ -46,15 +55,15 @@ function deleteSite(index) {
 }
 
 function validationUrl() {
-  var regex = /^(https:\/\/)?(http:\/\/)/i;
+  var regex = /^(https:\/\/)/i;
   return regex.test(siteUrl.value);
 }
 
 function validationName() {
-  var regexName = /^[A-Z][a-z]{3,}$/g;
+  var regexName = /^[A-Z][\sa-zA-Z]{2,}$/g;
   return regexName.test(siteName.value);
 }
 
-function closeMessage(){
-  document.getElementById('layer').style.cssText="display: none;"
+function closeMessage() {
+  document.getElementById("layer").style.cssText = "display: none;";
 }

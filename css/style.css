@@ -96,10 +96,10 @@ table {
 .card .card-title {
   font-family: var(--fourth-font-family);
 }
-.card .card-text {
+.card .card-text-one,.card-text-two {
   font-family: var(--third-font-family);
   font-size: 17px;
 }
-.card .card-text i {
+.card .card-text-one i,.card-text-two i {
   color: #bb4120;
 }
