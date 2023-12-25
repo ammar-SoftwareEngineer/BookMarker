@@ -60,7 +60,7 @@ function validationUrl() {
 }
 
 function validationName() {
-  var regexName = /^[A-Z][\sa-zA-Z]{2,}$/g;
+  var regexName = /^[A-Z][\sa-zA-Z]{0,}$/g;
   return regexName.test(siteName.value);
 }
 
