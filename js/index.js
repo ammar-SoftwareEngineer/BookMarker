@@ -17,6 +17,12 @@ function addSite() {
     displaySite();
     clearForm();
   } else {
+    // if (siteName.value === '' || siteUrl.value === '') {
+    //   document.querySelector(".one").innerHTML = "Site name cannot be empty";
+    //   document.querySelector(".two").innerHTML = "Site URL cannot be empty";
+    //   document.getElementById("layer").style.display = "block";
+    //   return; // Exit the function early if either name or URL is empty
+    // }
     if (!validationName()) {
       document.querySelector(".one").innerHTML =
         "Site name The letter you entered at the beginning of the word is lowercase";
@@ -24,8 +30,8 @@ function addSite() {
         " Or Site name must contain at least 3 characters";
       document.getElementById("layer").style.cssText = "display: block; ";
     } else if (!validationUrl()) {
-      document.querySelector(".two").innerHTML = "Site URL must be a valid one";
-      document.querySelector(".card-text-one").style.display = "none";
+      document.querySelector(".one").innerHTML = "Site URL must be a valid one";
+      document.querySelector(".card-text-two").style.display = "none";
       document.getElementById("layer").style.cssText = "display: block; ";
     }
   }
@@ -56,7 +62,7 @@ function deleteSite(index) {
 }
 
 function validationUrl() {
-  var regex = /^(https:\/\/)/i;
+  var regex = /^(ftp|http|https)/i;
   return regex.test(siteUrl.value);
 }
 
